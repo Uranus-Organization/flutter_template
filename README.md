@@ -1,13 +1,13 @@
-Quiche VPN
+#### QuicheVPN
 
 ### [Getting Started](#getting-started)
 
-* Flutter (Channel stable, 3.3.7)
-* Dart 2.18.4
+* Flutter (Channel stable, 3.7.3)
+* Dart 2.19.2
 * Cocoapods 1.11.3
 
 ### [Main Packages](#main-packages)
-* [`flutter_bloc`](https://pub.dev/packages/flutter_bloc): State management package.
+* [`provider`](https://pub.dev/packages/provider): State management package.
 * [`dio`](https://pub.dev/packages/dio): A powerful Http client for Dart.
 * [`mockito`](https://pub.dev/packages/mockito): A mock framework with APIs for Fakes, Mocks, behavior verification, and stubbing.
 
@@ -46,9 +46,6 @@ Quiche VPN
 │       │   │   │   ├── api_client.dart
 │       │   │   │   ├── api_client_type.dart
 │       │   │   │   └── api_client_type.g.dart
-│       │   │   ├── graphql_client
-│       │   │   │   ├── graphql_client.dart
-│       │   │   │   └── graphql_client_type.dart
 │       │   │   ├── request
 │       │   │   │   └── dummy_request.dart
 │       │   │   └── response
