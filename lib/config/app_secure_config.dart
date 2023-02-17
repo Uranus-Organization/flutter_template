@@ -1,4 +1,4 @@
-import 'package:fluttour/config/app_secure_config_type.dart';
+import 'package:quiche_vpn/config/app_secure_config_type.dart';
 
 class AppSecureConfig with AppSecureConfigType {
 

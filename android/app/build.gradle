@@ -43,7 +43,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.fluttour.example'
+        applicationId 'com.quiche.example'
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()

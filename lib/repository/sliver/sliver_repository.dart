@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
-import 'package:fluttour/data/datasource/sliver/sliver_datasource_type.dart';
-import 'package:fluttour/data/error_response.dart';
-import 'package:fluttour/data/api/request/brand_request.dart';
-import 'package:fluttour/data/api/request/recommend_dishes_request.dart';
-import 'package:fluttour/data/api/response/brand_response.dart';
-import 'package:fluttour/data/api/response/dish_response.dart';
-import 'package:fluttour/util/app_mixin.dart';
+import 'package:quiche_vpn/data/datasource/sliver/sliver_datasource_type.dart';
+import 'package:quiche_vpn/data/error_response.dart';
+import 'package:quiche_vpn/data/api/request/brand_request.dart';
+import 'package:quiche_vpn/data/api/request/recommend_dishes_request.dart';
+import 'package:quiche_vpn/data/api/response/brand_response.dart';
+import 'package:quiche_vpn/data/api/response/dish_response.dart';
+import 'package:quiche_vpn/util/app_mixin.dart';
 
 import 'sliver_repository_type.dart';
 

@@ -1,8 +1,6 @@
-import 'package:fluttour/data/api/api_client/api_client.dart';
-import 'package:fluttour/data/api/api_client/api_client_type.dart';
-import 'package:fluttour/data/api/graphql_client/graphql_client.dart';
-import 'package:fluttour/data/api/graphql_client/graphql_client_type.dart';
-import 'package:fluttour/di/config_module.dart';
+import 'package:quiche_vpn/data/api/api_client/api_client.dart';
+import 'package:quiche_vpn/data/api/api_client/api_client_type.dart';
+import 'package:quiche_vpn/di/config_module.dart';
 
 mixin ClientModule on ConfigModule {
   /// API/REST Client
@@ -13,10 +11,12 @@ mixin ClientModule on ConfigModule {
     );
   }
   // GraphQL Client
+  /*
   GraphqlClientType get graphqlClient {
     return GraphqlClient(
         endPoint: appConfig.graphqlEndPoint,
         authToken: appSecureConfig.graphqlAuthToken
     );
   }
+   */
 }

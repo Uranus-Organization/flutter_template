@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttour/util/util.dart';
+import 'package:quiche_vpn/util/util.dart';
 
 class AppPrimaryButton extends StatelessWidget {
   const AppPrimaryButton({

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:fluttour/domain/model/brand.dart';
-import 'package:fluttour/domain/model/dish.dart';
-import 'package:fluttour/domain/model/failure.dart';
+import 'package:quiche_vpn/domain/model/brand.dart';
+import 'package:quiche_vpn/domain/model/dish.dart';
+import 'package:quiche_vpn/domain/model/failure.dart';
 
 abstract class SliverUseCaseType {
   // Get brand

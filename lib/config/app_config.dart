@@ -1,5 +1,5 @@
-import 'package:fluttour/config/app_config_type.dart';
-import 'package:fluttour/environment/environment.dart';
+import 'package:quiche_vpn/config/app_config_type.dart';
+import 'package:quiche_vpn/environment/environment.dart';
 
 class AppConfig with AppConfigType {
   static final AppConfig shared = AppConfig._instance();

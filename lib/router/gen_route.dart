@@ -1,28 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:fluttour/presentation/home/home_page.dart';
-import 'package:fluttour/presentation/sliver/sliver_page.dart';
-import 'package:fluttour/presentation/splash/splash_page.dart';
-import 'package:fluttour/router/routes.dart';
+import 'package:quiche_vpn/presentation/gold/gold_page.dart';
+import 'package:quiche_vpn/presentation/sliver/sliver_page.dart';
+import 'package:quiche_vpn/presentation/splash/splash_page.dart';
+import 'package:quiche_vpn/router/routes.dart';
 
 Route<Object>? generateRoute(RouteSettings settings) {
   final namedRoute = settings.name == '/'
       ? Routes.root
       : Routes.values.firstWhere((element) {
-    if (settings.name != null) {
-      return settings.name! == '/${element.appRoute.name}';
-    }
-    return false;
-  }, orElse: () => Routes.unknown);
-  debugPrint('\n=============== (Origin: ${settings.name}) Navigating to: ${namedRoute.toString()}\n');
+          if (settings.name != null) {
+            return settings.name! == '/${element.appRoute.name}';
+          }
+          return false;
+        }, orElse: () => Routes.unknown);
+  debugPrint(
+      '\n=============== (Origin: ${settings.name}) Navigating to: ${namedRoute.toString()}\n');
   switch (namedRoute.appRoute) {
     case AppRoute.unknown:
       return _errorRoute();
-    case AppRoute.home:
-      return _buildRoute(settings: settings, screen: const HomePage());
     case AppRoute.root:
-      return _buildRoute(settings: settings, screen: const SplashPage());
+      return _buildRoute(
+        settings: settings,
+        screen: const SplashPage(),
+      );
     case AppRoute.sliver:
-      return _buildRoute(settings: settings, screen: const SliverPage());
+      return _buildRoute(
+        settings: settings,
+        screen: const SliverPage(),
+      );
+    case AppRoute.gold:
+      return _buildRoute(
+        settings: settings,
+        screen: const GoldPage(),
+      );
   }
 }
 
@@ -42,7 +52,7 @@ Route<Object>? _errorRoute() {
 Route<Object>? _buildRoute({
   required RouteSettings settings,
   required Widget screen,
-  bool fullscreenDialog = false
+  bool fullscreenDialog = false,
 }) {
   return CustomMaterialPageRoute(
     settings: settings,
@@ -60,10 +70,10 @@ class NoAnimationMaterialPageRoute<T> extends MaterialPageRoute<T> {
     bool maintainState = true,
     bool fullscreenDialog = false,
   }) : super(
-      builder: builder,
-      maintainState: maintainState,
-      settings: settings,
-      fullscreenDialog: fullscreenDialog);
+            builder: builder,
+            maintainState: maintainState,
+            settings: settings,
+            fullscreenDialog: fullscreenDialog);
 
   @override
   Widget buildTransitions(BuildContext context, Animation<double> animation,
@@ -112,9 +122,9 @@ class CustomMaterialPageRoute<T> extends MaterialPageRoute<T> {
     bool maintainState = true,
     bool fullscreenDialog = false,
   }) : super(
-    builder: builder,
-    settings: settings,
-    maintainState: maintainState,
-    fullscreenDialog: fullscreenDialog,
-  );
+          builder: builder,
+          settings: settings,
+          maintainState: maintainState,
+          fullscreenDialog: fullscreenDialog,
+        );
 }

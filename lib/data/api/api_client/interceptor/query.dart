@@ -1,7 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttour/router/navigation_controller.dart';
+import 'package:quiche_vpn/router/navigation_controller.dart';
 
 class QueryInterceptor extends InterceptorsWrapper {
   static const _contentType = 'content-type';
@@ -46,7 +46,7 @@ class QueryInterceptor extends InterceptorsWrapper {
       throw DioError(
         requestOptions: response.requestOptions,
         response: response,
-        type: DioErrorType.response,
+        type: DioErrorType.badResponse,
         error: 'Invalid token or current token is expired. Please try logging in again!',
       );
     }
@@ -54,7 +54,7 @@ class QueryInterceptor extends InterceptorsWrapper {
       throw DioError(
         requestOptions: response.requestOptions,
         response: response,
-        type: DioErrorType.response,
+        type: DioErrorType.badResponse,
         error: 'Response format is not a json response',
       );
     }

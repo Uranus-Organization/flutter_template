@@ -1,6 +1,4 @@
-[![Build Status](https://app.bitrise.io/app/38259925b6bfe2bd/status.svg?token=7Q0InN8BEzmzxC0GPoddUg&branch=develop)](https://app.bitrise.io/app/38259925b6bfe2bd)
-
-A Flutter project template, an upgrade version of [`fluttour`](https://github.com/dubydu/fluttour)
+Quiche VPN
 
 ### [Getting Started](#getting-started)
 
@@ -8,13 +6,9 @@ A Flutter project template, an upgrade version of [`fluttour`](https://github.co
 * Dart 2.18.4
 * Cocoapods 1.11.3
 
-### [Article](#article)
-* [`Flutter x Clean Architecture`](https://dubydu.medium.com/b53ce9e19d5a)
-
 ### [Main Packages](#main-packages)
 * [`flutter_bloc`](https://pub.dev/packages/flutter_bloc): State management package.
 * [`dio`](https://pub.dev/packages/dio): A powerful Http client for Dart.
-* [`graphql`](https://pub.dev/packages/graphql): A stand-alone GraphQL client for Dart.
 * [`mockito`](https://pub.dev/packages/mockito): A mock framework with APIs for Fakes, Mocks, behavior verification, and stubbing.
 
 ### [Usage](#usage)
@@ -22,6 +16,10 @@ A Flutter project template, an upgrade version of [`fluttour`](https://github.co
 #### Run App with a specific environment.
 * Development: `flutter run --flavor dev -t lib/main_dev.dart`
 * Production: `flutter run --flavor prod -t lib/main_prod.dart`
+
+### [Pitfalls](#pitfalls)
+- Make sure `flutter pub get` before you run the app.
+- Run the `flutter pub run build_runner build --delete-conflicting-outputs` in order for generating necessary files.
 
 ### [Project Structure](#project-structure)
 ```
@@ -136,10 +134,7 @@ A Flutter project template, an upgrade version of [`fluttour`](https://github.co
       expect('actual', 'matcher');
     });
   });
-```
-
-### [Pitfalls](#pitfalls)
-- Make sure `flutter pub get` before you run the app.
+``` 
 
 ### [Archive](#archive)
 #### iOS

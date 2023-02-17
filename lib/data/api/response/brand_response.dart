@@ -1,4 +1,5 @@
-import 'package:fluttour/data/api/response/dish_response.dart';
+
+import 'dish_response.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'brand_response.g.dart';
 

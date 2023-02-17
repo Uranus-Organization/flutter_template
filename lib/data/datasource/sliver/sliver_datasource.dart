@@ -1,8 +1,8 @@
-import 'package:fluttour/data/api/api_client/api_client_type.dart';
-import 'package:fluttour/data/api/request/brand_request.dart';
-import 'package:fluttour/data/api/request/recommend_dishes_request.dart';
-import 'package:fluttour/data/api/response/brand_response.dart';
-import 'package:fluttour/data/api/response/dish_response.dart';
+import 'package:quiche_vpn/data/api/api_client/api_client_type.dart';
+import 'package:quiche_vpn/data/api/request/brand_request.dart';
+import 'package:quiche_vpn/data/api/request/recommend_dishes_request.dart';
+import 'package:quiche_vpn/data/api/response/brand_response.dart';
+import 'package:quiche_vpn/data/api/response/dish_response.dart';
 import 'sliver_datasource_type.dart';
 
 class SliverDataSource implements SliverDataSourceType {
@@ -16,7 +16,8 @@ class SliverDataSource implements SliverDataSourceType {
   }
 
   @override
-  Future<List<DishResponse>> getRecommendDishes({required RecommendDishesRequest request}) async {
-    return await apiClient.getRecommendDishes(id: request.id);
+  Future<List<DishResponse>> getRecommendDishes({required RecommendDishesRequest request}) {
+    // TODO: implement getRecommendDishes
+    throw UnimplementedError();
   }
 }

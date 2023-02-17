@@ -1,4 +1,4 @@
-import 'package:fluttour/router/routes.dart';
+import 'package:quiche_vpn/router/routes.dart';
 
 class NamedRoute {
   final AppRoute appRoute;

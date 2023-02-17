@@ -1,8 +1,8 @@
-import 'package:fluttour/data/api/request/brand_request.dart';
-import 'package:fluttour/data/api/response/brand_response.dart';
-import 'package:fluttour/data/api/response/dish_response.dart';
-import 'package:fluttour/domain/model/brand.dart';
-import 'package:fluttour/domain/model/dish.dart';
+import 'package:quiche_vpn/data/api/request/brand_request.dart';
+import 'package:quiche_vpn/data/api/response/brand_response.dart';
+import 'package:quiche_vpn/data/api/response/dish_response.dart';
+import 'package:quiche_vpn/domain/model/brand.dart';
+import 'package:quiche_vpn/domain/model/dish.dart';
 
 class SliverTranslator {
   /// To Brand Request

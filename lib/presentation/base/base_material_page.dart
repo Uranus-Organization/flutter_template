@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttour/util/assets/app_color.dart';
+import 'package:quiche_vpn/util/assets/app_color.dart';
 
 class BaseMaterialPage extends StatelessWidget {
   const BaseMaterialPage({

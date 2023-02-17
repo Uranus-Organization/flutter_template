@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:fluttour/data/error_response.dart';
-import 'package:fluttour/data/api/response/brand_response.dart';
-import 'package:fluttour/data/api/response/dish_response.dart';
+import 'package:quiche_vpn/data/error_response.dart';
+import 'package:quiche_vpn/data/api/response/brand_response.dart';
+import 'package:quiche_vpn/data/api/response/dish_response.dart';
 
 abstract class SliverRepositoryType {
   // Get brand

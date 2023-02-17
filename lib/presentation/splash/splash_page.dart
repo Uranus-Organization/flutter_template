@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fluttour/util/assets/app_image.dart';
-import 'package:fluttour/util/util.dart';
+import 'package:quiche_vpn/util/assets/app_image.dart';
+import 'package:quiche_vpn/util/util.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class _SplashPageState extends State<SplashPage>
   @override
   Future<void> afterFirstLayout(BuildContext context) async {
     await Future.delayed(const Duration(milliseconds: 2500), () {
-      transitionToHomePage();
+      transitionToSliverPage();
     });
   }
 

@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:fluttour/domain/model/brand.dart';
-import 'package:fluttour/domain/model/dish.dart';
-import 'package:fluttour/domain/model/failure.dart';
-import 'package:fluttour/domain/translator/sliver_translator.dart';
-import 'package:fluttour/domain/usecase/sliver/sliver_usecase_type.dart';
-import 'package:fluttour/repository/sliver/sliver_repository_type.dart';
+import 'package:quiche_vpn/domain/model/brand.dart';
+import 'package:quiche_vpn/domain/model/dish.dart';
+import 'package:quiche_vpn/domain/model/failure.dart';
+import 'package:quiche_vpn/domain/translator/sliver_translator.dart';
+import 'package:quiche_vpn/domain/usecase/sliver/sliver_usecase_type.dart';
+import 'package:quiche_vpn/repository/sliver/sliver_repository_type.dart';
 
 class SliverUseCase extends SliverUseCaseType {
   SliverUseCase({required this.repository});

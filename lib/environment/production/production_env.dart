@@ -1,4 +1,4 @@
-import 'package:fluttour/environment/environment.dart';
+import 'package:quiche_vpn/environment/environment.dart';
 
 extension ProductionEnvironment on Environment {
   static Environment production() {

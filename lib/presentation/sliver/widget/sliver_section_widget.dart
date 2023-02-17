@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fluttour/domain/model/dish.dart';
-import 'package:fluttour/util/assets/app_image.dart';
-import 'package:fluttour/util/util.dart';
+import 'package:quiche_vpn/domain/model/dish.dart';
+import 'package:quiche_vpn/util/assets/app_image.dart';
+import 'package:quiche_vpn/util/util.dart';
 
 class SliverSectionWidget extends StatelessWidget {
   const SliverSectionWidget({

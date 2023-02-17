@@ -1,4 +1,4 @@
-package com.fluttour.example
+package com.quiche.example
 
 import io.flutter.embedding.android.FlutterActivity
 

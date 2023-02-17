@@ -1,18 +1,17 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fluttour/di/client_module.dart';
-import 'package:fluttour/di/config_module.dart';
-import 'package:fluttour/di/datasource_module.dart';
-import 'package:fluttour/di/repository_module.dart';
-import 'package:fluttour/di/usecase_module.dart';
-import 'package:fluttour/presentation/home/home_bloc.dart';
-import 'package:fluttour/presentation/sliver/sliver_bloc.dart';
-import 'package:fluttour/router/gen_route.dart';
-import 'package:fluttour/router/navigation_controller.dart';
-import 'package:fluttour/util/app_global.dart' as global;
-import 'package:fluttour/util/assets/app_locale.dart';
+import 'package:provider/provider.dart';
+import 'package:quiche_vpn/di/client_module.dart';
+import 'package:quiche_vpn/di/config_module.dart';
+import 'package:quiche_vpn/di/datasource_module.dart';
+import 'package:quiche_vpn/di/repository_module.dart';
+import 'package:quiche_vpn/di/usecase_module.dart';
+import 'package:quiche_vpn/presentation/sliver/sliver_provider.dart';
+import 'package:quiche_vpn/router/gen_route.dart';
+import 'package:quiche_vpn/router/navigation_controller.dart';
+import 'package:quiche_vpn/util/app_global.dart' as global;
+import 'package:quiche_vpn/util/assets/app_locale.dart';
 
 Future<void> myMain() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,12 +44,9 @@ class MyAppState extends State<MyApp>
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
-    return MultiBlocProvider(
+    return MultiProvider(
         providers: [
-          BlocProvider(create: (_) => HomeBloc(
-              useCase: homeUseCase
-          )),
-          BlocProvider(create: (_) => SliverBloc(
+          ChangeNotifierProvider(create: (_) => SliverProvider(
               useCase: sliverUseCase
           ))
         ],

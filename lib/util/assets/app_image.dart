@@ -18,18 +18,18 @@ class AppImageBuilder {
 
   Widget widget(
       {Key? key,
-        bool matchTextDirection = false,
-        AssetBundle? bundle,
-        String? package,
-        double? width,
-        double? height,
-        BoxFit? fit = BoxFit.contain,
-        Alignment alignment = Alignment.center,
-        Color? color,
-        BorderRadius? borderRadius,
-        Widget? placeholder,
-        String? errorImageUrl,
-        int? memCacheHeight}) {
+      bool matchTextDirection = false,
+      AssetBundle? bundle,
+      String? package,
+      double? width,
+      double? height,
+      BoxFit? fit = BoxFit.contain,
+      Alignment alignment = Alignment.center,
+      Color? color,
+      BorderRadius? borderRadius,
+      Widget? placeholder,
+      String? errorImageUrl,
+      int? memCacheHeight}) {
     return ImageBuilder(
       assetPath,
       key: key,
@@ -60,18 +60,18 @@ class ImageBuilder extends StatelessWidget {
   final int? memCacheHeight;
 
   const ImageBuilder(
-      this.input,
-      {Key? key,
-        this.height,
-        this.width,
-        this.color,
-        this.fit,
-        this.memCacheHeight,
-        this.alignment = Alignment.center,
-        this.borderRadius,
-        this.placeholder,
-        this.errorImageUrl})
-      : super(key: key);
+    this.input, {
+    Key? key,
+    this.height,
+    this.width,
+    this.color,
+    this.fit,
+    this.memCacheHeight,
+    this.alignment = Alignment.center,
+    this.borderRadius,
+    this.placeholder,
+    this.errorImageUrl,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -108,14 +108,24 @@ class ImageBuilder extends StatelessWidget {
       if (input.endsWith('svg')) {
         if (isNetworkMedia) {
           return SvgPicture.network(input,
-              color: color,
+              colorFilter: color != null
+                  ? ColorFilter.mode(
+                      color!,
+                      BlendMode.srcIn,
+                    )
+                  : null,
               height: height,
               width: width,
               fit: fit ?? BoxFit.contain,
               alignment: alignment);
         }
         return SvgPicture.asset(input,
-            color: color,
+            colorFilter: color != null
+                ? ColorFilter.mode(
+                    color!,
+                    BlendMode.srcIn,
+                  )
+                : null,
             height: height,
             width: width,
             fit: fit ?? BoxFit.contain,

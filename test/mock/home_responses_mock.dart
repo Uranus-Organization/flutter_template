@@ -1,8 +1,7 @@
-import 'package:fluttour/data/api/response/fluttour_response.dart';
-
+/*
 class HomeResponsesMock {
-  static get fluttourResponse {
-    return FluttourResponse(
+  static get quicheResponse {
+    return QuicheResponse(
         flutterVersion: 'Channel stable, 3.0.2',
         dartVersion: '2.17.3',
         devToolsVersion: '2.12.2',
@@ -11,3 +10,4 @@ class HomeResponsesMock {
     );
   }
 }
+ */
