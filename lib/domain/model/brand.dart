@@ -1,7 +1,6 @@
-import 'package:equatable/equatable.dart';
 import 'dish.dart';
 
-class Brand extends Equatable {
+class Brand {
   const Brand({
     required this.id,
     required this.name,
@@ -23,17 +22,4 @@ class Brand extends Equatable {
   final String? duration;
   final int? kitchenBrandId;
   final List<Dish>? dishes;
-
-  @override
-  List<Object?> get props => [
-    id,
-    name,
-    logo,
-    image,
-    tags,
-    distance,
-    duration,
-    kitchenBrandId,
-    dishes,
-  ];
 }

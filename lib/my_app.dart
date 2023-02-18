@@ -1,6 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:quiche_vpn/di/client_module.dart';
 import 'package:quiche_vpn/di/config_module.dart';
@@ -11,7 +9,7 @@ import 'package:quiche_vpn/presentation/sliver/sliver_provider.dart';
 import 'package:quiche_vpn/router/gen_route.dart';
 import 'package:quiche_vpn/router/navigation_controller.dart';
 import 'package:quiche_vpn/util/app_global.dart' as global;
-import 'package:quiche_vpn/util/assets/app_locale.dart';
+import 'package:quiche_vpn/util/util.dart';
 
 Future<void> myMain() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,18 +45,20 @@ class MyAppState extends State<MyApp>
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => SliverProvider(
-              useCase: sliverUseCase
+              sliverUseCase: sliverUseCase
           ))
         ],
         child: MaterialApp(
+          scrollBehavior: BaseScrollable(),
           debugShowCheckedModeBanner: false,
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           navigatorObservers: [global.navigationObserver],
-          theme: global.them,
+          theme: global.theme,
           onGenerateRoute: generateRoute,
           navigatorKey: NavigationController.globalNavigatorKey,
+          scaffoldMessengerKey: global.scaffoldMessengerKey,
         )
     );
   }

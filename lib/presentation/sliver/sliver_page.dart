@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quiche_vpn/presentation/base/base_material_page.dart';
+import 'package:quiche_vpn/domain/model/dish.dart';
 import 'package:quiche_vpn/presentation/base/base_route_aware.dart';
 import 'package:quiche_vpn/presentation/sliver/sliver_provider.dart';
+import 'package:quiche_vpn/presentation/sliver/widget/sliver_body_widget.dart';
 import 'package:quiche_vpn/util/util.dart';
 
 class SliverPage extends StatefulWidget {
@@ -13,7 +14,7 @@ class SliverPage extends StatefulWidget {
 }
 
 class SliverPageState extends BaseRouteAware<SliverPage>
-    with AfterLayoutMixin, ResponsiveMixin {
+    with AfterLayoutMixin, ResponsiveMixin, SliverProviderDelegate {
   /// Sliver provider
   late SliverProvider _sliverProvider;
 
@@ -21,6 +22,12 @@ class SliverPageState extends BaseRouteAware<SliverPage>
   Future<void> afterFirstLayout(BuildContext context) async {
     // Init sliver provider
     _sliverProvider = Provider.of(context, listen: false);
+    _sliverProvider.delegate = this;
+    // Fetch some data
+    showLoadingSnackBar(LocaleTexts.fetching.tr());
+    Future.delayed(const Duration(seconds: 2), () async {
+      await _sliverProvider.fetchSomeData();
+    });
   }
 
   @override
@@ -48,6 +55,16 @@ class SliverPageState extends BaseRouteAware<SliverPage>
   }
 
   @override
+  void onFetchSomeDataFailed(String message) {
+    showTitleSnackBar(message);
+  }
+
+  @override
+  void onFetchSomeDataSuccess(data) {
+    hideSnackBar();
+  }
+
+  @override
   void dispose() {
     _sliverProvider.dispose();
     super.dispose();
@@ -58,14 +75,17 @@ class SliverPageState extends BaseRouteAware<SliverPage>
     initResponsive(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sliver'),
+        title: AppText.h4(LocaleTexts.sliver.tr()),
       ),
       backgroundColor: AppColor.white,
-      body: Center(
-        child: AppPrimaryButton(
-          onPressed: transitionToGoldPage,
-          title: 'Go Gold',
-        ),
+      body: Selector<SliverProvider, List<Dish>>(
+        selector: (_, data) => data.dishes,
+        builder: (BuildContext context, List<Dish> data, __) {
+          if (data.isEmpty) return const SizedBox();
+          return SliverBodyWidget(onGotoGoldPressed: () {
+            transitionToGoldPage(data);
+          });
+        },
       ),
     );
   }

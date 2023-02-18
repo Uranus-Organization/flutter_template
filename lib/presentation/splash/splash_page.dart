@@ -11,7 +11,6 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage>
     with ResponsiveMixin, AfterLayoutMixin {
-
   @override
   Future<void> afterFirstLayout(BuildContext context) async {
     await Future.delayed(const Duration(milliseconds: 2500), () {

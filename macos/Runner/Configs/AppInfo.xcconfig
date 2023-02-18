@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = quiche
+PRODUCT_NAME = quiche_vpn
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.quiche.example
+PRODUCT_BUNDLE_IDENTIFIER = com.quiche.quicheVpn
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2022 com.quiche.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2023 com.quiche. All rights reserved.

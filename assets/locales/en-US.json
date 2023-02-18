@@ -1,5 +1,8 @@
 {
-  "app_name": "quiche_vpn",
+  "app_name": "QuicheVPN",
   "next": "Next",
-  "language": "Language"
+  "language": "Language",
+  "fetching": "Fetching",
+  "sliver": "Sliver",
+  "gold": "Gold"
 }

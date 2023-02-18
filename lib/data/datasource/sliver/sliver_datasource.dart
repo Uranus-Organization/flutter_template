@@ -16,8 +16,9 @@ class SliverDataSource implements SliverDataSourceType {
   }
 
   @override
-  Future<List<DishResponse>> getRecommendDishes({required RecommendDishesRequest request}) {
-    // TODO: implement getRecommendDishes
-    throw UnimplementedError();
+  Future<List<DishResponse>> getRecommendDishes({
+    required RecommendDishesRequest request,
+  }) async {
+    return await apiClient.getRecommendDishes(id: request.id);
   }
 }

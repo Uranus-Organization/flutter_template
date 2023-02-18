@@ -31,7 +31,7 @@ Route<Object>? generateRoute(RouteSettings settings) {
     case AppRoute.gold:
       return _buildRoute(
         settings: settings,
-        screen: const GoldPage(),
+        screen: GoldPage.instance(),
       );
   }
 }

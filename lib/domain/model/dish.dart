@@ -1,6 +1,4 @@
-import 'package:equatable/equatable.dart';
-
-class Dish extends Equatable {
+class Dish {
   const Dish({
     required this.id,
     required this.kitchenBrandId,
@@ -22,23 +20,9 @@ class Dish extends Equatable {
   final int? brandId;
   final String? price;
   final bool? available;
-
-  @override
-  List<Object?> get props => [
-    id,
-    kitchenBrandId,
-    category,
-    name,
-    image,
-    description,
-    brandId,
-    price,
-    available,
-  ];
 }
 
-
-class DishCategory extends Equatable {
+class DishCategory {
   const DishCategory({
     required this.id,
     required this.name,
@@ -64,7 +48,4 @@ class DishCategory extends Equatable {
         isSelected: isSelected ?? this.isSelected
     );
   }
-
-  @override
-  List<Object?> get props => [id, name, dishes, isSelected];
 }

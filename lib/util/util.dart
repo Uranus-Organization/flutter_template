@@ -8,4 +8,5 @@ export 'app_global.dart';
 export 'app_mixin.dart';
 export 'app_router.dart';
 export 'widget/app_primary_button.dart';
+export 'widget/app_snack_bar.dart';
 export 'extension/app_device.dart';

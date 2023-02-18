@@ -1,5 +1,8 @@
 {
-  "app_name": "quiche_vpn",
+  "app_name": "QuicheVPN",
   "next": "下一个",
-  "language": "言語"
+  "language": "言語",
+  "fetching": "加工",
+  "sliver": "條子",
+  "gold": "金子"
 }

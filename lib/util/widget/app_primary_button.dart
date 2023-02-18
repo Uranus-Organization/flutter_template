@@ -5,7 +5,7 @@ class AppPrimaryButton extends StatelessWidget {
   const AppPrimaryButton({
     Key? key,
     required this.onPressed,
-    required this.title
+    required this.title,
   }) : super(key: key);
 
   final VoidCallback onPressed;
@@ -18,12 +18,16 @@ class AppPrimaryButton extends StatelessWidget {
         colorScheme: const ColorScheme.light(primary: AppColor.active),
       ),
       child: OutlinedButton(
-          style: OutlinedButton.styleFrom(
-            side: BorderSide(width: 1.sp, color: AppColor.active),
-            padding: EdgeInsets.only(bottom: 1.5.h)
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              side: BorderSide(width: 1.sp, color: AppColor.active),
+            ),
           ),
-          onPressed: onPressed,
-          child: AppText.primaryButtonText(title, color: AppColor.active)
+        ),
+        onPressed: onPressed,
+        child: AppText.primaryButtonText(title, color: AppColor.active),
       ),
     );
   }

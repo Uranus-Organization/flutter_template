@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'app_color.dart';
+import 'package:quiche_vpn/util/util.dart';
 
 enum FontFamilyType {
   exo,
@@ -170,7 +169,7 @@ class AppText extends StatelessWidget {
     String? configKey,
     TextAlign? textAlign,
     int? maxLines,
-    double? fontSize = 14.0,
+    double? fontSize = 15.0,
     FontFamilyType? fontFamily = FontFamilyType.exo
   }) {
     return AppText._(

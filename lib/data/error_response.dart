@@ -1,12 +1,7 @@
-import 'package:equatable/equatable.dart';
-
-class ErrorResponse extends Equatable {
+class ErrorResponse {
   final String message;
 
   const ErrorResponse(this.message);
-
-  @override
-  List<Object> get props => [message];
 }
 
 class CodeErrorResponse extends ErrorResponse {
