@@ -20,9 +20,9 @@ class AppPrimaryButton extends StatelessWidget {
       child: OutlinedButton(
         style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
-              side: BorderSide(width: 1.sp, color: AppColor.active),
+            const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              side: BorderSide(width: 1, color: AppColor.active),
             ),
           ),
         ),

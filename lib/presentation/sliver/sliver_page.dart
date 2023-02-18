@@ -14,7 +14,7 @@ class SliverPage extends StatefulWidget {
 }
 
 class SliverPageState extends BaseRouteAware<SliverPage>
-    with AfterLayoutMixin, ResponsiveMixin, SliverProviderDelegate {
+    with AfterLayoutMixin, SliverProviderDelegate {
   /// Sliver provider
   late SliverProvider _sliverProvider;
 
@@ -72,7 +72,6 @@ class SliverPageState extends BaseRouteAware<SliverPage>
 
   @override
   Widget build(BuildContext context) {
-    initResponsive(context);
     return Scaffold(
       appBar: AppBar(
         title: AppText.h4(LocaleTexts.sliver.tr()),

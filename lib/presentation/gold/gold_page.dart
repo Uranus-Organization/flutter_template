@@ -21,7 +21,7 @@ class GoldPage extends StatefulWidget {
 }
 
 class GoldPageState extends BaseRouteAware<GoldPage>
-    with AfterLayoutMixin, ResponsiveMixin {
+    with AfterLayoutMixin {
   @override
   Future<void> afterFirstLayout(BuildContext context) async {
     final data = ModalRoute.of(context)!.settings.arguments as List<Dish>;
@@ -54,7 +54,6 @@ class GoldPageState extends BaseRouteAware<GoldPage>
 
   @override
   Widget build(BuildContext context) {
-    initResponsive(context);
     return Scaffold(
       appBar: AppBar(
         title: AppText.h4(LocaleTexts.gold.tr()),

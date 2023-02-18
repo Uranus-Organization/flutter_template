@@ -37,9 +37,9 @@ class GoldBodyWidget extends StatelessWidget {
           );
         },
         separatorBuilder: (_, __) {
-          return Padding(
-            padding: EdgeInsets.all(5.h),
-            child: const Divider(
+          return const Padding(
+            padding: EdgeInsets.all(5),
+            child: Divider(
               color: AppColor.lightGray,
             ),
           );

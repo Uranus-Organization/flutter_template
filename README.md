@@ -14,8 +14,16 @@
 ### [Usage](#usage)
 
 #### Run App with a specific environment.
+
+#### iOS & Android
 * Development: `flutter run --flavor dev -t lib/main_dev.dart`
 * Production: `flutter run --flavor prod -t lib/main_prod.dart`
+
+#### macOS & Web
+* Development: `flutter run -t lib/main_dev.dart`
+* Production: `flutter run -t lib/main_prod.dart`
+
+`(?) Look like Flutter doesn't support --flavor for macOS & Web`
 
 ### [Pitfalls](#pitfalls)
 - Make sure `flutter pub get` before you run the app.

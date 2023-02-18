@@ -10,7 +10,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage>
-    with ResponsiveMixin, AfterLayoutMixin {
+    with AfterLayoutMixin {
   @override
   Future<void> afterFirstLayout(BuildContext context) async {
     await Future.delayed(const Duration(milliseconds: 2500), () {
@@ -20,13 +20,12 @@ class _SplashPageState extends State<SplashPage>
 
   @override
   Widget build(BuildContext context) {
-    initResponsive(context);
     return Material(
       color: AppColor.white,
       child: Center(
         child: SizedBox(
-          width: 124.w,
-          height: 124.w,
+          width: 124,
+          height: 124,
           child: AppImage.appYolo.widget(),
         ),
       ),

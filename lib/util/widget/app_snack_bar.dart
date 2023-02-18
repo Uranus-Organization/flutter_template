@@ -8,10 +8,10 @@ void showTitleSnackBar(String text, {int seconds = 3}) {
     backgroundColor: AppColor.mainGreen.withOpacity(.8),
     behavior: SnackBarBehavior.floating,
     elevation: 1,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(15.r)),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(15)),
     ),
-    margin: EdgeInsets.only(left: 10.w, right: 10.w, bottom: 10.h),
+    margin: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
     content: Container(
       alignment: Alignment.centerLeft,
       child: Row(
@@ -20,7 +20,7 @@ void showTitleSnackBar(String text, {int seconds = 3}) {
         children: <Widget>[
           Expanded(
             child: Padding(
-              padding: EdgeInsets.only(bottom: 6.h),
+              padding: const EdgeInsets.only(bottom: 6),
               child: AppText.h3(
                 color: AppColor.white,
                 text,
@@ -42,12 +42,12 @@ void showLoadingSnackBar(String text, {int seconds = 60}) {
   var snackBar = SnackBar(
     backgroundColor: AppColor.mainGreen.withOpacity(.8),
     elevation: 1,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(15.r)),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(15)),
     ),
     duration: Duration(seconds: seconds),
     behavior: SnackBarBehavior.floating,
-    margin: EdgeInsets.only(left: 10.w, right: 10.w, bottom: 10.h),
+    margin: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
     content: Container(
       alignment: Alignment.center,
       child: Row(
@@ -55,7 +55,7 @@ void showLoadingSnackBar(String text, {int seconds = 60}) {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(bottom: 6.h),
+            padding: const EdgeInsets.only(bottom: 6),
             child: AppText.h3(
               color: AppColor.white,
               text,
@@ -64,11 +64,11 @@ void showLoadingSnackBar(String text, {int seconds = 60}) {
             ),
           ),
           const SizedBox(width: 20),
-          SizedBox(
+          const SizedBox(
             height: 20,
             width: 20,
             child: CircularProgressIndicator(
-              strokeWidth: 3.w,
+              strokeWidth: 3,
               color: Colors.white,
             ),
           )

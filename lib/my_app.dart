@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quiche_vpn/di/client_module.dart';
@@ -9,12 +10,13 @@ import 'package:quiche_vpn/presentation/sliver/sliver_provider.dart';
 import 'package:quiche_vpn/router/gen_route.dart';
 import 'package:quiche_vpn/router/navigation_controller.dart';
 import 'package:quiche_vpn/util/app_global.dart' as global;
-import 'package:quiche_vpn/util/util.dart';
+import 'package:quiche_vpn/util/app_global.dart';
+import 'package:quiche_vpn/util/assets/app_locale.dart';
 
 Future<void> myMain() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  await ScreenUtil.ensureScreenSize();
+  // await ScreenUtil.ensureScreenSize();
   runApp(
       EasyLocalization(
         supportedLocales: const [AppLocales.en, AppLocales.zh],
@@ -41,7 +43,7 @@ class MyAppState extends State<MyApp>
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context);
+    // ScreenUtil.init(context);
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => SliverProvider(
@@ -60,6 +62,24 @@ class MyAppState extends State<MyApp>
           navigatorKey: NavigationController.globalNavigatorKey,
           scaffoldMessengerKey: global.scaffoldMessengerKey,
         )
+    );
+  }
+}
+
+class AppTest extends StatefulWidget {
+  const AppTest({Key? key}) : super(key: key);
+
+  @override
+  State<AppTest> createState() => _AppTestState();
+}
+
+class _AppTestState extends State<AppTest> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('TEST'),
+      ),
     );
   }
 }

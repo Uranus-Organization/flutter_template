@@ -44,6 +44,8 @@ PageTransitionsTheme _buildPageTransitionsTheme() {
     builders: <TargetPlatform, PageTransitionsBuilder>{
       TargetPlatform.android: CupertinoPageTransitionsBuilder(),
       TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+      TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
+      TargetPlatform.windows: OpenUpwardsPageTransitionsBuilder(),
     },
   );
 }
