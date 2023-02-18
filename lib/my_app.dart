@@ -16,7 +16,6 @@ import 'package:quiche_vpn/util/assets/app_locale.dart';
 Future<void> myMain() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  // await ScreenUtil.ensureScreenSize();
   runApp(
       EasyLocalization(
         supportedLocales: const [AppLocales.en, AppLocales.zh],
@@ -62,24 +61,6 @@ class MyAppState extends State<MyApp>
           navigatorKey: NavigationController.globalNavigatorKey,
           scaffoldMessengerKey: global.scaffoldMessengerKey,
         )
-    );
-  }
-}
-
-class AppTest extends StatefulWidget {
-  const AppTest({Key? key}) : super(key: key);
-
-  @override
-  State<AppTest> createState() => _AppTestState();
-}
-
-class _AppTestState extends State<AppTest> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('TEST'),
-      ),
     );
   }
 }
