@@ -21,6 +21,7 @@ dependencies:
   provider: ^6.0.5
   # User interface
   flutter_svg: ^2.0.1
+  card_swiper: ^2.0.4
   # Annotation
   json_annotation: ^4.8.0
   # Language

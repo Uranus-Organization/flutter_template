@@ -1,9 +1,9 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quiche_vpn/domain/model/dish.dart';
 import 'package:quiche_vpn/presentation/base/base_route_aware.dart';
+import 'package:quiche_vpn/presentation/component/swipe_directions_widget.dart';
 import 'package:quiche_vpn/presentation/sliver/sliver_provider.dart';
-import 'package:quiche_vpn/presentation/sliver/widget/sliver_body_widget.dart';
 import 'package:quiche_vpn/util/util.dart';
 
 class SliverPage extends StatefulWidget {
@@ -18,16 +18,22 @@ class SliverPageState extends BaseRouteAware<SliverPage>
   /// Sliver provider
   late SliverProvider _sliverProvider;
 
+  /// Swiper controller
+  final SwiperController swiperController = SwiperController();
+
+  /// Swiping
+  late Offset horizontalOffset;
+  late Offset verticalOffset;
+  late bool isUp;
+  late bool isDown;
+  late bool isLeft;
+  late bool isRight;
+
   @override
   Future<void> afterFirstLayout(BuildContext context) async {
     // Init sliver provider
     _sliverProvider = Provider.of(context, listen: false);
     _sliverProvider.delegate = this;
-    // Fetch some data
-    showLoadingSnackBar(LocaleTexts.fetching.tr());
-    Future.delayed(const Duration(seconds: 2), () async {
-      await _sliverProvider.fetchSomeData();
-    });
   }
 
   @override
@@ -73,18 +79,29 @@ class SliverPageState extends BaseRouteAware<SliverPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: AppText.h4(LocaleTexts.sliver.tr()),
-      ),
       backgroundColor: AppColor.white,
-      body: Selector<SliverProvider, List<Dish>>(
-        selector: (_, data) => data.dishes,
-        builder: (BuildContext context, List<Dish> data, __) {
-          if (data.isEmpty) return const SizedBox();
-          return SliverBodyWidget(onGotoGoldPressed: () {
-            transitionToGoldPage(data);
-          });
+      body: Swiper(
+        itemBuilder: (BuildContext context, int index) {
+          return SwipeDirectionWidget(
+            onLeft: () {
+              swiperController.next();
+            },
+            onRight: () {
+              swiperController.previous();
+            },
+            child: Container(
+              color:
+                  index % 2 == 0 ? Colors.deepOrangeAccent : Colors.amberAccent,
+            ),
+          );
         },
+        curve: Curves.easeOut,
+        itemCount: 10,
+        controller: swiperController,
+        layout: SwiperLayout.DEFAULT,
+        axisDirection: AxisDirection.down,
+        scrollDirection: Axis.vertical,
+        allowImplicitScrolling: true,
       ),
     );
   }
