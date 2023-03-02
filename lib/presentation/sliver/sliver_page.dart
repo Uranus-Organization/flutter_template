@@ -21,14 +21,6 @@ class SliverPageState extends BaseRouteAware<SliverPage>
   /// Swiper controller
   final SwiperController swiperController = SwiperController();
 
-  /// Swiping
-  late Offset horizontalOffset;
-  late Offset verticalOffset;
-  late bool isUp;
-  late bool isDown;
-  late bool isLeft;
-  late bool isRight;
-
   @override
   Future<void> afterFirstLayout(BuildContext context) async {
     // Init sliver provider
